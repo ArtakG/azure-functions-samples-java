@@ -21,6 +21,9 @@ jobs:
       with:
         java-version: ${{ env.JAVA_VERSION }}
 
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+      
     - name: 'Restore Project Dependencies Using Mvn'
       shell: bash
       run: |
