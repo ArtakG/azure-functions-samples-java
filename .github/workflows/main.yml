@@ -23,13 +23,13 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-      
+
     - name: 'Restore Project Dependencies Using Mvn'
       shell: bash
       run: |
         pushd './${{ env.POM_XML_DIRECTORY }}'
-        gradlew clean
-        gradlew azureFunctionsPackage
+        ./gradlew clean
+        ./gradlew azureFunctionsPackage
         popd
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
